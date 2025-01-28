@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Header</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Ensure the body and html take up full height */
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    /* Apply the GIF as background for the entire page */
+    body {
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/64/Venus_set_may_29_2020.gif'); /* Your GIF URL */
+        background-size: cover; /* Ensure the GIF covers the entire page */
+        background-position: center center; /* Center the GIF */
+        background-attachment: fixed; /* Make it fixed when scrolling */
+        background-repeat: no-repeat; /* Prevent repeating the GIF */
+        font-family: "Poppins";
+    }
+
+    /* Ensure the image is a perfect circle */
+    .circle-img {
+      width: 300px; /* Fixed width */
+      height: 300px; /* Fixed height */
+      object-fit: cover; /* Ensures the image scales properly inside the circle */
+      transition: all 0.3s ease;
+      box-shadow: 10px 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .circle-img:hover {
+        transform: scale(1.1);
+        box-shadow: 15px 15px 40px rgba(0,0,0,0.3)
+    }
+
+    h2 {
+        font-family: "Poppins";
+        font-weight: 700;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        color: #f3f4f6;
+        margin-bottom: 80px;
+    }
+
+    /* Bio Box Styling */
+    .bio-box {
+      background-color:  #D1BB9E; /* Light background */
+      padding: 30px; /* Padding around the paragraphs */
+      border-radius: 15px; /* Rounded corners */
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+      font-size: 1rem;
+      font-family: "Poppins"; /* Ensure text uses the correct font */
+      margin-top: 5px; /* Adds some spacing above */
+      display: inline-block; /* Makes sure the container size fits the content */
+    }
+
+    .container {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    .navar-nav .nav-link:hover {
+      color: #f3f4f6;
+      text-decoration: underline;
+    }
+
+    .navbar {
+      background-color: #e4c2a1;
+    }
+
+    .navbar-nav .nav-link {
+      color: #f3f4f6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    .social-icons{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    .social-icon{
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3 ease;
+    }
+    .social-icon:hover{
+        transform: scale(1.1);
+    }
+    ::-webkit-scrollbar {
+    width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+    background: #635344; /* Dark brown for the track */
+    border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+    background: #e4c2a1; /* Light brown matching the header */
+    border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+    background: #d3b095; /* Slightly darker shade for hover effect */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <!-- Left Side: About Me -->
+      <a class="navbar-brand font-weight-bold" href="#about">About Me</a>
+
+      <!-- Hamburger Menu for Mobile -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Right Side: Links -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#interests">Interests</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section with Content -->
+  <div class="container d-flex flex-column align-items-center" style="padding-top: 60px; padding-bottom: 60px;">
+    <!-- Heading -->
+    <h2 class="mb-3 text-center">Hi, I am Aditi!</h2>
+    
+    <!-- Rounded Image -->
+    <img src="aditi.JPG" class="rounded-circle circle-img" alt="Aditi's Picture">
+    
+    <!-- Intro Paragraph -->
+    <div class="mt-4 text-center">
+        <div class="bio-box">
+            <p>
+                Hey, I’m Aditi, currently studying Computer Science and Engineering with a focus on AI and Data Science at MIT WPU. I’m incredibly passionate about software development, UI/UX design. My curiosity drives me to explore new concepts, and I’m always eager to learn more, whether it’s coding languages or innovative tools. I also have a wide range of technical skills that complement my studies, and I’m excited to apply them in real-world projects.
+            </p>
+    
+            <p>
+                Outside of academics, I’m an avid explorer of the universe. Astronomy is one of my biggest passions. When I’m not diving into technical challenges or the stars, I enjoy discovering new music, watching thought-provoking movies.
+            </p>
+        </div>
+    </div>
+        <div class = "social-icons">
+            <a href="https://www.linkedin.com/in/aditi-suryawanshi-5a1a9322b/" target="_blank">
+                <img src="linkedin.png" alt="LinkedIn" class="social-icon">
+              </a>
+              <a href="https://www.instagram.com" target="_blank">
+                <img src="instagram.png" alt="Instagram" class="social-icon">
+              </a>
+              <a href="https://github.com/aditiids" target="_blank">
+                <img src="github.png" alt="GitHub" class="social-icon">
+              </a>
+              <a href="https://www.hackerrank.com/profile/mitwpucse_A_46" target="_blank">
+                <img src="code.png" alt="HackerRank" class="social-icon">
+              </a>
+              <a href="https://dribbble.com/aditiids" target="_blank">
+                <img src="dribbble.png" alt="Dribbble" class="social-icon">
+              </a>
+        </div>
+    </div>
+
+  <!-- Optional Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
