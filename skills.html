@@ -115,6 +115,75 @@
           display: block;
           margin: 0 auto 10px;
         }
+        .skill-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 30px;
+        }
+
+        .skill-card {
+            width: 200px;
+            height: 200px;
+            perspective: 1000px;
+        }
+
+        .skill-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.7s;
+            transform-style: preserve-3d;
+        }
+
+        .skill-card:hover .skill-inner {
+            transform: rotateY(180deg);
+        }
+
+        .skill-front,
+        .skill-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backface-visibility: hidden;
+            transition: transform 0.5s;
+        }
+
+        .skill-front {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .skill-front img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .skill-back {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            transform: rotateY(180deg);
+            padding: 15px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body>
@@ -139,59 +208,80 @@
     </nav>
 
     <!-- Skills Section -->
-    <section class="skills-section">
-        <div class="container">
-            <h1 class="mb-4">My Skills</h1>
-            <p class="lead">Here are some of the skills I've mastered:</p>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="skill-box">
-                      <img src="html.png" alt="HTML Logo" class="skill-logo">
-                        <h3>HTML</h3>
-                        <p>Proficient in building structured, semantic, and accessible web pages.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="skill-box">
-                      <img src="css.png" alt="CSS Logo" class="skill-logo">
-                        <h3>CSS & Bootstrap</h3>
-                        <p>Skilled in creating responsive, modern designs using Bootstrap.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="skill-box">
-                      <img src="javascriptt.png" alt="JavaScript Logo" class="skill-logo">
-                        <h3>JavaScript</h3>
-                        <p>Experience in interactive UI development and event-driven programming.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="skill-box">
-                      <img src="python.png" alt="Python Logo" class="skill-logo">
-                        <h3>Python</h3>
-                        <p>Experience with AI, machine learning, and automation.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="skill-box">
-                      <img src="figma.png" alt="UI/UX Logo" class="skill-logo">
-                        <h3>UI/UX Design</h3>
-                        <p>Passionate about user-friendly and visually appealing design.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="skill-box">
-                      <img src="gitt.png" alt="Git Logo" class="skill-logo">
-                        <h3>Git & GitHub</h3>
-                        <p>Familiar with version control and collaborative development.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container skill-container">
+      <div class="skill-card">
+          <div class="skill-inner">
+              <div class="skill-front">
+                  <img src="html.png" alt="HTML Logo">
+                  <h3>HTML</h3>
+              </div>
+              <div class="skill-back">
+                  <p>Proficient in building structured, semantic, and accessible web pages.</p>
+              </div>
+          </div>
+      </div>
+  
+      <div class="skill-card">
+          <div class="skill-inner">
+              <div class="skill-front">
+                  <img src="css.png" alt="CSS Logo">
+                  <h3>CSS & Bootstrap</h3>
+              </div>
+              <div class="skill-back">
+                  <p>Skilled in creating responsive, modern designs using Bootstrap.</p>
+              </div>
+          </div>
+      </div>
+  
+      <div class="skill-card">
+          <div class="skill-inner">
+              <div class="skill-front">
+                  <img src="javascriptt.png" alt="JavaScript Logo">
+                  <h3>JavaScript</h3>
+              </div>
+              <div class="skill-back">
+                  <p>Experience in interactive UI development and event-driven programming.</p>
+              </div>
+          </div>
+      </div>
+  
+      <div class="skill-card">
+          <div class="skill-inner">
+              <div class="skill-front">
+                  <img src="python.png" alt="Python Logo">
+                  <h3>Python</h3>
+              </div>
+              <div class="skill-back">
+                  <p>Experience with AI, machine learning, and automation.</p>
+              </div>
+          </div>
+      </div>
+  
+      <div class="skill-card">
+          <div class="skill-inner">
+              <div class="skill-front">
+                  <img src="figma.png" alt="UI/UX Logo">
+                  <h3>UI/UX Design</h3>
+              </div>
+              <div class="skill-back">
+                  <p>Passionate about user-friendly and visually appealing design.</p>
+              </div>
+          </div>
+      </div>
+  
+      <div class="skill-card">
+          <div class="skill-inner">
+              <div class="skill-front">
+                  <img src="git.png" alt="Git Logo">
+                  <h3>Git & GitHub</h3>
+              </div>
+              <div class="skill-back">
+                  <p>Familiar with version control and collaborative development.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  
     </section>
 
     <!-- Bootstrap JS -->
