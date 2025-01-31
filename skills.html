@@ -16,6 +16,8 @@
             height: 100%;
             width: 100%;
             font-family: "Poppins";
+            min-height: 100vh;
+            
         }
         body::before {
         content: '';
@@ -24,8 +26,9 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-        z-index: -1;
+        background: rgba(0, 0, 0, 0.6);
+        /* Dark overlay */
+       
     }
         html {
         overflow-y: scroll;
@@ -63,6 +66,9 @@
             padding: 60px 0;
             color: white;
             min-height: 200vh;
+            z-index: 1;
+            position: relative;
+            margin-bottom: 80px;
         }
 
         h1 {
@@ -74,10 +80,10 @@
         /* Skill Cards */
         .skill-box {
             background-color: #D1BB9E;
-            padding: 20px;
+            padding: 10px;
             border-radius: 15px;
             box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+            
             font-size: 1.1rem;
         }
 
@@ -200,6 +206,81 @@
         .skill-card:hover {
             transform: translateY(-10px);
             transition: all 0.3s ease-in-out;
+        }
+        /* Certifications Section */
+        .certifications {
+            padding: 40px 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2;
+            position: relative;
+            margin-top: 32px; 
+
+            
+        }
+
+        .certifications-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 100px;
+        }
+
+        .certification-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px; /* Slightly wider for better spacing */
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .certification-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+        }
+
+        .certification-logo {
+            width: 100px; /* Larger logo */
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 10px; /* Rounded corners for logos */
+        }
+
+        .certification-name {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600; /* Bold text */
+        }
+
+        .certification-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.5; /* Better readability */
+        }
+        .hackerrank-badges{
+            padding: 40px 0;
+            background: rgba(0, 0, 0, 0.6);
+            
+        }
+        .badges-container{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+        .badge-img{
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .badge-img:hover{
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -398,6 +479,54 @@
         </div>
     </div>
   </div>
+
+  <!-- Certifications Section -->
+  <section class="certifications">
+    <div class="container">
+        <h2 class="text-center text-white mb-5">Certifications</h2>
+        <div class="certifications-container">
+            <!-- Certification Box 1 -->
+            <div class="certification-box">
+                <img src="certificate_01.png" alt="Certificate 01" class="certification-logo">
+                <h4 class="certification-name">Crash Course on Python</h4>
+                <p class="certification-description">A comprehensive course covering Python fundamentals, data structures, and algorithms.</p>
+            </div>
+
+            <!-- Certification Box 2 -->
+            <div class="certification-box">
+                <img src="certificate_02.png" alt="Certificate 02" class="certification-logo">
+                <h4 class="certification-name">Machine Learning Specialization</h4>
+                <p class="certification-description">Advanced course on machine learning concepts, including supervised and unsupervised learning.</p>
+            </div>
+
+            <!-- Certification Box 3 -->
+            <div class="certification-box">
+                <img src="certificate_03.png" alt="Certificate 03" class="certification-logo">
+                <h4 class="certification-name">Web Development Bootcamp</h4>
+                <p class="certification-description">Full-stack web development course covering HTML, CSS, JavaScript, and backend technologies.</p>
+            </div>
+
+            <!-- Add more certification boxes as needed -->
+        </div>
+    </div>
+</section>
+  <!-- Hacker rank badges section-->
+   <section class = "hackerrank-badges">
+    <div class = "container">
+        <!--heading-->
+        <h2 class = "text-center text-white mb-5">Hackerrank Badges</h2>
+
+        <!--Badges Container-->
+        <div class = "badges-conatiner d-flex flex-wrap justify-content-center gap=4">
+            <!--Badges Images-->
+            <img src = "cpp_new_badge.png" alt="Badge 1" class ="badge-img">
+            <img src = "problem.png" alt="Badge 1" class ="badge-img">
+            <img src = "java_badge.png" alt="Badge 1" class ="badge-img">
+            <img src = "python_badge.png" alt="Badge 1" class ="badge-img">
+            <img src = "c_badge.png" alt="Badge 1" class ="badge-img">
+        </div>
+    </div>
+   </section>
   
     </section>
 
