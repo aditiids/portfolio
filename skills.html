@@ -6,18 +6,25 @@
     <title>Skills</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         /* Ensure the body and html take up full height */
+
+        @font-face {
+            font-family: 'PixeloidSans';  /* Name for your font */
+            src: url('PixeloidSans.woff2') format('woff');  /* Path to the font file */
+            font-weight: normal;  /* Optional: specify weight */
+            font-style: normal;  /* Optional: specify style */
+        }
+
+        /* Apply the custom font and fix overwriting */
         body, html {
+            font-family: 'PixeloidSans', sans-serif;  /* Use 'MyCustomFont' first, fallback to sans-serif */
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            font-family: "Poppins";
             min-height: 100vh;
-            
         }
         body::before {
         content: '';
@@ -26,9 +33,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        /* Dark overlay */
-       
+        background: rgba(62, 45, 92, 0.7); /* Dark overlay */
     }
         html {
         overflow-y: scroll;
@@ -37,7 +42,7 @@
 
         /* Background GIF */
         body {
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/64/Venus_set_may_29_2020.gif'); 
+            background-image: url('https://i.pinimg.com/originals/17/49/ea/1749ea089c2bb9cc69761c267628c6fb.gif');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -47,7 +52,8 @@
 
         /* Navbar Styling */
         .navbar {
-            background-color: #CA965C;;
+            color: #ffff;
+            background: rgba(62,45,92,0.75);
         }
 
         .navbar-nav .nav-link {
@@ -210,7 +216,7 @@
         /* Certifications Section */
         .certifications {
             padding: 40px 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(62, 45, 92, 0.7);
             z-index: 2;
             position: relative;
             margin-top: 32px; 
@@ -219,17 +225,19 @@
         }
 
         .certifications-container {
+            
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 100px;
+            background: rgba(0, 0, 0, 0);
+            
         }
 
         .certification-box {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 20px;
             width: 300px; /* Slightly wider for better spacing */
             text-align: center;
@@ -241,17 +249,30 @@
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
         }
 
-        .certification-logo {
-            width: 100px; /* Larger logo */
+        .certification-logo-01{
+            width: 200px;  /* Larger logo */
             height: auto;
-            margin-bottom: 15px;
             border-radius: 10px; /* Rounded corners for logos */
+            margin-top: 25px;
+        }
+        .certification-logo-02{
+            width: 200px;  /* Larger logo */
+            height: auto;
+            border-radius: 10px; /* Rounded corners for logos */
+            margin-top: 15px;
+        }
+        .certification-logo-03{
+            width: 200px;  /* Larger logo */
+            height: auto;
+            border-radius: 10px; /* Rounded corners for logos */
+            margin-top: 20px;
         }
 
         .certification-name {
             color: white;
             font-size: 1.3rem;
-            margin-bottom: 10px;
+            margin-top: 20px;
+            
             font-weight: 600; /* Bold text */
         }
 
@@ -262,7 +283,7 @@
         }
         .hackerrank-badges{
             padding: 40px 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(62, 45, 92, 0.7);
             
         }
         .badges-container{
@@ -289,7 +310,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand font-weight-bold" href="index.html">About Me</a>
+            <a class="navbar-brand font-weight-bold" href="index.html" style = "color: #ffff">About Me</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -297,9 +318,9 @@
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="skills.html">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html" style = "color: #ffff">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="skills.html" style = "color: #ffff">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#interests" style = "color: #ffff">Interests</a></li>
                 </ul>
             </div>
         </div>
@@ -482,28 +503,33 @@
 
   <!-- Certifications Section -->
   <section class="certifications">
-    <div class="container">
         <h2 class="text-center text-white mb-5">Certifications</h2>
         <div class="certifications-container">
             <!-- Certification Box 1 -->
             <div class="certification-box">
-                <img src="certificate_01.png" alt="Certificate 01" class="certification-logo">
-                <h4 class="certification-name">Crash Course on Python</h4>
-                <p class="certification-description">A comprehensive course covering Python fundamentals, data structures, and algorithms.</p>
+                <a href="certificate_01.png" target="_blank">
+                    <img src="certificate_01.png" alt="Certificate 01" class="certification-logo-01">
+                </a>                
+                <h4 class="certification-name">Crash Course <br>on Python</h4>
+                
             </div>
 
             <!-- Certification Box 2 -->
             <div class="certification-box">
-                <img src="certificate_02.png" alt="Certificate 02" class="certification-logo">
-                <h4 class="certification-name">Machine Learning Specialization</h4>
-                <p class="certification-description">Advanced course on machine learning concepts, including supervised and unsupervised learning.</p>
+                <a href="certificate_02.png" target="_blank">
+                    <img src="certificate_02.png" alt="Certificate 02" class="certification-logo-02">
+                </a>                
+                <h4 class="certification-name">Digital Skills: <br>User Experience</h4>
+                
             </div>
 
             <!-- Certification Box 3 -->
             <div class="certification-box">
-                <img src="certificate_03.png" alt="Certificate 03" class="certification-logo">
-                <h4 class="certification-name">Web Development Bootcamp</h4>
-                <p class="certification-description">Full-stack web development course covering HTML, CSS, JavaScript, and backend technologies.</p>
+                <a href="certificate_03.png" target="_blank">
+                    <img src="certificate_03.png" alt="Certificate 03" class="certification-logo-03">
+                </a>                
+                <h4 class="certification-name">Introduction to <br> Front-End <br>Development</h4>
+               
             </div>
 
             <!-- Add more certification boxes as needed -->
