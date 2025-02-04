@@ -23,7 +23,7 @@
         padding: 0;
         height: 100%;
         width: 100%;
-        overflow: hidden;
+        overflow: auto;
     }body {
         font-family:'PixeloidSans';
         background-image: url('https://i.pinimg.com/originals/17/49/ea/1749ea089c2bb9cc69761c267628c6fb.gif');
@@ -68,14 +68,33 @@
     }
     .timeline{
         position: relative;
-        max-width: 1200px;
-        margin: 100px auto;
+        max-width: 1000px;
+        margin: 50px auto;
     }
-    .container_timeline{
-        padding: 10px 50px;
+    
+    .timeline::after{
+      content:" ";
+      position: absolute;
+      width: 6px;
+      background: white;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      z-index: -1;
+    }
+    .timeline-container{
+        padding: 20px;
         position: relative;
         width: 50%;
-        
+    }
+    .left-container{
+      left: 0;
+      text-align: right;
+    }
+    .right-container{
+      left: 55%;
+      text-align: left;
     }
     .text-box{
         padding: 20px 30px;
@@ -88,6 +107,34 @@
         justify-content: center;
         transition: transform 0.5s;
     }
+    .timeline-container img{
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 100px;
+      right: -30px;
+      border-radius: 50%;
+      background: white ;
+      padding: 5px;
+    }
+    .right-container img {
+        left: -30px;
+        right: auto;
+    }
+    .timeline-container::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 15px;
+        right: 10px;
+        border-radius: 50%;
+    }
+    .right-container::before {
+        left: -10x;
+        right: auto;
+    }
+    
 </style>
 </head>
 <body>
@@ -107,14 +154,51 @@
         </div>
       </nav>
       <div class = "timeline">
-        <div class = "container_timeline">
+        <div class = "timeline-container left-container">
             <div class = "text-box">
                 <h2>Music Management System</h2>
                 <h5>C++ for OOPs</h5>
                 <p>Developed a mini project to manage and organize music collections.
                     Technologies Used: C++, Object-Oriented Programming principles.</p>
             </div>
+            <img src = "cpp.png", alt = "C++">
         </div>
+        <div class = "timeline-container right-container">
+          <div class = "text-box">
+              <h2>Music Management System</h2>
+              <h5>C++ for OOPs</h5>
+              <p>Developed a mini project to manage and organize music collections.
+                  Technologies Used: C++, Object-Oriented Programming principles.</p>
+          </div>
+          <img src = "cpp.png", alt = "C++">
+      </div>
+      <div class = "timeline-container left-container">
+        <div class = "text-box">
+            <h2>Music Management System</h2>
+            <h5>C++ for OOPs</h5>
+            <p>Developed a mini project to manage and organize music collections.
+                Technologies Used: C++, Object-Oriented Programming principles.</p>
+        </div>
+        <img src = "cpp.png", alt = "C++">
+    </div>
+    <div class = "timeline-container right-container">
+      <div class = "text-box">
+          <h2>Music Management System</h2>
+          <h5>C++ for OOPs</h5>
+          <p>Developed a mini project to manage and organize music collections.
+              Technologies Used: C++, Object-Oriented Programming principles.</p>
+      </div>
+      <img src = "cpp.png", alt = "C++">
+  </div>
+  <div class = "timeline-container left-container">
+    <div class = "text-box">
+        <h2>Music Management System</h2>
+        <h5>C++ for OOPs</h5>
+        <p>Developed a mini project to manage and organize music collections.
+            Technologies Used: C++, Object-Oriented Programming principles.</p>
+    </div>
+    <img src = "cpp.png", alt = "C++">
+</div>
       </div>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
