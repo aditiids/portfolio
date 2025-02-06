@@ -66,73 +66,79 @@
       color: #ffff;
       
     }
-    .timeline{
-        position: relative;
-        max-width: 1000px;
-        margin: 50px auto;
+    .carousel-container {
+      perspective: 1000px; 
+      margin: 50px auto;
+      max-width: 800px;
+      text-align: center;
     }
-    
-    .timeline::after{
-      content:" ";
+    .carousel{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      animation: rotateCarousel 20s infinite linear;
+    }
+    .carousel-item{
       position: absolute;
-      width: 6px;
-      background: white;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      margin-left: -3px;
-      z-index: -1;
+      width: 200px;
+      height: 300px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
+      transition: transform 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
     }
-    .timeline-container{
-        padding: 20px;
-        position: relative;
-        width: 50%;
+
+    .carousel-content{
+      padding: 20px;
     }
-    .left-container{
-      left: 0;
-      text-align: right;
+    .carousel-content h2{
+      font-size: 1.5rem;
+      margin-bottom: 10px;
     }
-    .right-container{
-      left: 55%;
-      text-align: left;
+    .carousel-content p {
+      font-size: 1rem;
+      margin-bottom: 15px;
     }
-    .text-box{
-        padding: 20px 30px;
-        position: relative;
-        border-radius: 6px;
-        font-size: 15px;
-        color: white;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.9);
-        background: rgba(255, 255, 255, 0.1);
-        justify-content: center;
-        transition: transform 0.5s;
+    .carousel-content .btn{
+      background: rgba(62,45,92,0.75);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
     }
-    .timeline-container img{
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      top: 100px;
-      right: -30px;
-      border-radius: 50%;
-      background: white ;
-      padding: 5px;
+
+    /* Positioning Carousel Items in 3D Space */
+    .carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+    .carousel-item:nth-child(2) { transform: rotateY(60deg) translateZ(300px); }
+    .carousel-item:nth-child(3) { transform: rotateY(120deg) translateZ(300px); }
+    .carousel-item:nth-child(4) { transform: rotateY(180deg) translateZ(300px); }
+    .carousel-item:nth-child(5) { transform: rotateY(240deg) translateZ(300px); }
+    .carousel-item:nth-child(6) { transform: rotateY(300deg) translateZ(300px); }
+
+    /* Carousel Rotation Animation */
+    @keyframes rotateCarousel {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
     }
-    .right-container img {
-        left: -30px;
-        right: auto;
+
+    /* Pause Rotation on Hover */
+    .carousel-container:hover .carousel {
+      animation-play-state: paused;
     }
-    .timeline-container::before {
-        content: '';
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        top: 15px;
-        right: 10px;
-        border-radius: 50%;
-    }
-    .right-container::before {
-        left: -10x;
-        right: auto;
+
+    /* Highlight Active Item on Hover */
+    .carousel-item:hover {
+      transform: scale(1.1) translateZ(350px);
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
     }
     
 </style>
@@ -154,51 +160,25 @@
         </div>
       </nav>
       <div class = "timeline">
-        <div class = "timeline-container left-container">
-            <div class = "text-box">
-                <h2>Music Management System</h2>
-                <h5>C++ for OOPs</h5>
-                <p>Developed a mini project to manage and organize music collections.
-                    Technologies Used: C++, Object-Oriented Programming principles.</p>
+        <div class = "carousel">
+          <div class = "carousel-item">
+            <img src = "project1.jpg" alt = "Project 1">
+            <div class = "carousel-content">
+              <h2>Project 01</h2>
+              <p>Description of Project 1</p>
+              <a herf = "#" class = 'btn'>Learn More</a>
             </div>
-            <img src = "cpp.png", alt = "C++">
-        </div>
-        <div class = "timeline-container right-container">
-          <div class = "text-box">
-              <h2>Music Management System</h2>
-              <h5>C++ for OOPs</h5>
-              <p>Developed a mini project to manage and organize music collections.
-                  Technologies Used: C++, Object-Oriented Programming principles.</p>
           </div>
-          <img src = "cpp.png", alt = "C++">
-      </div>
-      <div class = "timeline-container left-container">
-        <div class = "text-box">
-            <h2>Music Management System</h2>
-            <h5>C++ for OOPs</h5>
-            <p>Developed a mini project to manage and organize music collections.
-                Technologies Used: C++, Object-Oriented Programming principles.</p>
+          <div class="carousel-item">
+            <img src="project2.jpg" alt="Project 2">
+            <div class="carousel-content">
+              <h2>Project 2</h2>
+              <p>Description of Project 2.</p>
+              <a href="#" class="btn">Learn More</a>
+            </div>
+          </div>
         </div>
-        <img src = "cpp.png", alt = "C++">
-    </div>
-    <div class = "timeline-container right-container">
-      <div class = "text-box">
-          <h2>Music Management System</h2>
-          <h5>C++ for OOPs</h5>
-          <p>Developed a mini project to manage and organize music collections.
-              Technologies Used: C++, Object-Oriented Programming principles.</p>
-      </div>
-      <img src = "cpp.png", alt = "C++">
-  </div>
-  <div class = "timeline-container left-container">
-    <div class = "text-box">
-        <h2>Music Management System</h2>
-        <h5>C++ for OOPs</h5>
-        <p>Developed a mini project to manage and organize music collections.
-            Technologies Used: C++, Object-Oriented Programming principles.</p>
-    </div>
-    <img src = "cpp.png", alt = "C++">
-</div>
+        
       </div>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
